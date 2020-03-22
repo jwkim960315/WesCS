@@ -1,0 +1,21 @@
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+
+	input.create-post-form-input {
+		font-size: 1em;
+		color: #364F6B;
+		height: 5vh;
+		padding-left: 15px;
+		border-radius: 8px;
+		border: none;
+		margin: 10px 0;
+	}
+
+	div.create-post-form-bottom {
+		margin-top: 20px;
+
+		
+	}
+}

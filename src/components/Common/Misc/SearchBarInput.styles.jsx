@@ -11,5 +11,7 @@ export default styled.input`
 
 	&:focus {
 		outline: none;
+		border: 1px solid white;
+		border-right: 1px solid #FC5C9C;
 	}
 `;

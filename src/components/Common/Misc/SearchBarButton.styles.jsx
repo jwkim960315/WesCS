@@ -11,6 +11,10 @@ const Button = styled.button`
 	opacity: 1;
 	border: 1px solid #FC5C9C;
 	padding: 0;
+
+	&:hover {
+		opacity: .8;
+	}
 `;
 
 export default Button;

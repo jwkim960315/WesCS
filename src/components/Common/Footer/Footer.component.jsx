@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import FooterContainer from './FooterContainer.component.jsx';
-import ContactUs from './ContactUs.component.jsx';
+import FooterContainer from './FooterContainer.component';
+import ContactUs from './ContactUs.component';
 
 
 const Footer = () => (
