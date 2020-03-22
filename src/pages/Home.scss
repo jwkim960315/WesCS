@@ -1,0 +1,26 @@
+div.home-top-section,
+div.home-middle-section
+{
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr;
+	justify-items: stretch;
+	align-items: center;
+	margin: 100px 0 200px 0;
+}
+
+div.home-committee-members-section {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-items: center;
+	grid-auto-rows: minmax(150px, auto);
+	grid-gap: 100px;
+}
+
+div.detail-img {
+	margin-bottom: 15px;
+}
+
+div.member-name {
+	margin-top: 15px;
+}
+

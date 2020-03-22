@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="216" viewBox="0 0 256 216">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #799bc1;
+      }
+
+      .cls-2 {
+        fill: #fc5c9c;
+      }
+    </style>
+  </defs>
+  <g id="Monitor" transform="translate(-1992 -392)">
+    <path id="합치기_11" data-name="합치기 11" class="cls-1" d="M-2261,2217v-24h80v-32h-96a16,16,0,0,1-16-16V2017a16,16,0,0,1,16-16h224a16,16,0,0,1,16,16v128a16,16,0,0,1-16,16h-96v32h80v24Z" transform="translate(4285 -1609)"/>
+    <rect id="사각형_181" data-name="사각형 181" class="cls-2" width="208" height="112" rx="8" transform="translate(2016 416)"/>
+  </g>
+</svg>
