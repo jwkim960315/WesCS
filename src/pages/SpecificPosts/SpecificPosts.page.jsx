@@ -7,7 +7,9 @@ import LeftTitle from '../../components/Common/Misc/LeftTitle.component';
 import CreatePostForm from '../../components/Common/Misc/CreatePostForm.component';
 
 const pathnameToTitle = pathname => {
-	const subPathname = pathname.split('/').join('');
+	const splitPathname = pathname.split('/');
+	const subPathname = splitPathname[splitPathname.length-1];
+	
 	switch (subPathname) {
 		case 'allposts':
 			return 'All Posts';
