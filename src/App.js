@@ -5,6 +5,7 @@ import NavBar from './components/Common/NavBar/NavBar.component';
 import Home from './pages/Home/Home.page';
 import Explore from './pages/Explore/Explore.page';
 import SpecificPosts from './pages/SpecificPosts/SpecificPosts.page';
+import Alumni from './pages/Alumni/Alumni.page';
 
 import Footer from './components/Common/Footer/Footer.component';
 
@@ -42,6 +43,7 @@ const App = () => {
 				<Route exact path="/" component={Home} />
 				<Route exact path="/explore" component={Explore} />
 				<Route exact path="/allposts" component={SpecificPosts} />
+				<Route exact path="/explore/alumni" component={Alumni} />
 			</Switch>
 			<Footer />
 		</>

@@ -9,7 +9,7 @@ const inactiveCSS = css`
 	color: white;
 `; 
 
-const getLinkColor = props => props.isactive === 'true' ? activeCSS : inactiveCSS;
+const getLinkColor = ({ isactive }) => isactive === 'true' ? activeCSS : inactiveCSS;
 
 export default styled(Link)`
 	text-decoration: none;

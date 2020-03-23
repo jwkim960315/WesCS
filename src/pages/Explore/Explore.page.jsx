@@ -1,7 +1,8 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 // Components
+import BodyContainer from '../../components/Common/Misc/BodyContainer.component';
 import LeftTitle from '../../components/Common/Misc/LeftTitle.component';
 import CategoriesContainer from '../../components/Explore/CategoriesContainer.component';
 import CategoryCard from '../../components/Explore/CategoryCard.component';
@@ -10,15 +11,15 @@ import CategoryCard from '../../components/Explore/CategoryCard.component';
 import { categories } from '../../data/data.utils';
 
 const Explore = () => {
-	let history = useHistory();
+	let { pathname } = useLocation();
 
 	return (
-		<div className="body-container">
+		<BodyContainer>
 			<LeftTitle>Categories</LeftTitle>
 			<CategoriesContainer>
 				{categories.map((category,idx) => (
 					<CategoryCard 
-						to={`${category.subURL}`}
+						to={`${pathname}/${category.subURL}`}
 						key={`category-${idx}`} 
 						color={category.color}
 					>
@@ -26,7 +27,7 @@ const Explore = () => {
 					</CategoryCard>
 				))}
 			</CategoriesContainer>
-		</div>
+		</BodyContainer>
 	)
 };
 

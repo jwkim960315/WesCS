@@ -8,14 +8,6 @@ div.home-middle-section
 	margin: 0 0 200px 0;
 }
 
-div.home-committee-members-section {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	justify-items: center;
-	grid-auto-rows: minmax(150px, auto);
-	grid-gap: 100px;
-}
-
 div.detail-img {
 	margin-bottom: 15px;
 }

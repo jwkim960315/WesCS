@@ -124,3 +124,61 @@ export const categories = [
 		subURL: 'miscellaneous',
 	},
 ];
+
+// Alumni
+export const alumni = [
+	{
+		firstName: 'Tim',
+		lastName: 'Cook',
+		image: Home_1,
+		gradYear: 2021,
+		position: 'iOS Developer',
+		company: 'Apple',
+		email: 'tcook@wesleyan.edu',
+	},
+	{
+		firstName: 'Tim',
+		lastName: 'Cook',
+		image: Home_1,
+		gradYear: 2021,
+		position: 'iOS Developer',
+		company: 'Apple',
+		email: 'tcook@wesleyan.edu',
+	},
+	{
+		firstName: 'Tim',
+		lastName: 'Cook',
+		image: Home_1,
+		gradYear: 2021,
+		position: 'iOS Developer',
+		company: 'Apple',
+		email: 'tcook@wesleyan.edu',
+	},
+	{
+		firstName: 'Tim',
+		lastName: 'Cook',
+		image: Home_1,
+		gradYear: 2021,
+		position: 'iOS Developer',
+		company: 'Apple',
+		email: 'tcook@wesleyan.edu',
+	},
+	{
+		firstName: 'Tim',
+		lastName: 'Cook',
+		image: Home_1,
+		gradYear: 2021,
+		position: 'iOS Developer',
+		company: 'Apple',
+		email: 'tcook@wesleyan.edu',
+	},
+	{
+		firstName: 'Tim',
+		lastName: 'Cook',
+		image: Home_1,
+		gradYear: 2021,
+		position: 'iOS Developer',
+		company: 'Apple',
+		email: 'tcook@wesleyan.edu',
+	},
+];

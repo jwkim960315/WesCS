@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
 
 const AlumniCSS = css`
-	text-align: center;
+	margin-top: 70px;
 `;
 
 const getPage = ({ page }) => {
+	console.log(page);
 	switch (page) {
 		case 'alumni':
 			return AlumniCSS;
@@ -13,8 +14,12 @@ const getPage = ({ page }) => {
 	}
 }
 
-export default styled.h1`
-	color: #364F6B;
+export default styled.div`
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-items: stretch;
+	grid-auto-rows: minmax(150px, auto);
+	grid-gap: 100px;
 
 	${getPage}
 `;

@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
-	width: 60px;
+export default styled.button`
+	width: 130px;
 	height: 40px;
 	background: #FC5C9C;
 	border: 1px solid #FC5C9C;
-	border-radius: 0px 4px 4px 0px;
+	border-radius: 8px;
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
 	color: #FFFFFF;
 
 	&:hover {
 		opacity: .8;
 	}
 `;
-
-export default Button;

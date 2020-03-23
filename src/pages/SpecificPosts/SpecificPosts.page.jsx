@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // Components
+import BodyContainer from '../../components/Common/Misc/BodyContainer.component';
 import LeftTitle from '../../components/Common/Misc/LeftTitle.component';
 import CreatePostForm from '../../components/Common/Misc/CreatePostForm.component';
 
@@ -40,12 +41,12 @@ const SpecificPosts = () => {
 	},[]);
 
 	return (
-		<div className='body-container'>
+		<BodyContainer>
 			<LeftTitle>{category}</LeftTitle>
 			<CreatePostForm>
 
 			</CreatePostForm>
-		</div>
+		</BodyContainer>
 	)
 };
 

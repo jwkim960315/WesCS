@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-import './CreatePostForm.scss';
+import CreatePostFormContainer from './CreatePostFormContainer.component';
+import CreatePostFormInput from './CreatePostFormInput.component';
+import CreatePostFormBottom from './CreatePostFormBottom.component';
+import CreatePostFormButton from './CreatePostFormButton.component';
 
 const CreatePostForm = () => {
 	let [title,setTitle] = useState('');
@@ -12,19 +15,20 @@ const CreatePostForm = () => {
 	const onIsAnonymousChange = e => setIsAnonymous(e.target.value);
 
 	return (
-		<form>
-			<input className="create-post-form-input" onChange={onTitleChange} placeholder="Title" />
-			<input className="create-post-form-input" onChange={onContentChange} placeholder="Please be appropriate..." />
-			
-			<div className="create-post-form-bottom">
-				<select>
-					<option>Yes</option>
-					<option>No</option>
-				</select>
-				<label>Wish to be anonymous?</label>
-				<button type="submit">Create Post</button>
-			</div>
-		</form>
+		<CreatePostFormContainer>
+			<CreatePostFormInput onChange={onTitleChange} placeholder="Title" />
+			<CreatePostFormInput onChange={onContentChange} placeholder="Please be appropriate..." />
+			<CreatePostFormBottom>
+				<div>
+					<select>
+						<option>Yes</option>
+						<option>No</option>
+					</select>
+					<label>Wish to be anonymous?</label>
+				</div>
+				<CreatePostFormButton type="submit">Create Post</CreatePostFormButton>
+			</CreatePostFormBottom>
+		</CreatePostFormContainer>
 	)
 };
 

@@ -1,12 +1,14 @@
 import React from 'react';
 
 // Components
+import BodyContainer from '../../components/Common/Misc/BodyContainer.component';
 import LeftCard from '../../components/Home/LeftCard.component';
 import SearchBar from '../../components/Common/Misc/SearchBar.component';
 import RightColumn from '../../components/Home/RightColumn.component';
 import PicDescripCard from '../../components/Home/PicDescriptCard.component';
 import CenterTitle from '../../components/Home/CenterTitle.component';
-import MemberCard from '../../components/Home/MemberCard.component';
+import MemberCardsContainer from '../../components/Common/Misc/MemberCardsContainer.component';
+import MemberCard from '../../components/Common/Misc/MemberCard.component';
 
 // SVGs
 import { ReactComponent as Monitor } from '../../assets/images/Monitor.svg';
@@ -20,7 +22,7 @@ import './Home.scss';
 
 const Home = () => (
 	<div className="home">
-		<div className="body-container">
+		<BodyContainer>
 			<div className="home-top-section">
 				<LeftCard>
 					<h1>Wesleyan CS Club</h1>
@@ -51,7 +53,7 @@ const Home = () => (
 			<div className="home-committee-title-section">
 				<CenterTitle>Committee Members</CenterTitle>
 			</div>
-			<div className="home-committee-members-section">
+			<MemberCardsContainer>
 				{members.map((member,idx) => (
 					<MemberCard key={`member-${idx}`}>
 						<img src={member.image} alt={`member-img-${idx}`} />
@@ -59,8 +61,8 @@ const Home = () => (
 						<div>{member.description}</div>
 					</MemberCard>
 				))}
-			</div>
-		</div>
+			</MemberCardsContainer>
+		</BodyContainer>
 	</div>
 );
 
