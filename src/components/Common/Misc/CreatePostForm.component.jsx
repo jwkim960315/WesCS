@@ -8,11 +8,11 @@ import CreatePostFormButton from './CreatePostFormButton.component';
 const CreatePostForm = () => {
 	let [title,setTitle] = useState('');
 	let [content,setContent] = useState('');
-	let [isAnonymous,setIsAnonymous] = useState(false);
+	let [isAnonymous,setIsAnonymous] = useState(true);
 
 	const onTitleChange = e => setTitle(e.target.value);
 	const onContentChange = e => setContent(e.target.value);
-	const onIsAnonymousChange = e => setIsAnonymous(e.target.value);
+	const onIsAnonymousChange = e => setIsAnonymous(e.target.value === "yes" ? false : true);
 
 	return (
 		<CreatePostFormContainer>
@@ -20,11 +20,15 @@ const CreatePostForm = () => {
 			<CreatePostFormInput onChange={onContentChange} placeholder="Please be appropriate..." />
 			<CreatePostFormBottom>
 				<div>
-					<select>
-						<option>Yes</option>
-						<option>No</option>
-					</select>
-					<label>Wish to be anonymous?</label>
+					<input 
+						id="anonymous-checkbox" 
+						type="checkbox" 
+						value={isAnonymous ? "yes" : "no"}
+						name="Yes" 
+						checked={isAnonymous}
+						onClick={onIsAnonymousChange}
+					/>
+					<label htmlFor="anonymous-checkbox">Wish to be anonymous?</label>
 				</div>
 				<CreatePostFormButton type="submit">Create Post</CreatePostFormButton>
 			</CreatePostFormBottom>
