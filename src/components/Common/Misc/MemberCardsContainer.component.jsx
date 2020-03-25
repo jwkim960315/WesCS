@@ -5,7 +5,6 @@ const AlumniCSS = css`
 `;
 
 const getPage = ({ page }) => {
-	console.log(page);
 	switch (page) {
 		case 'alumni':
 			return AlumniCSS;

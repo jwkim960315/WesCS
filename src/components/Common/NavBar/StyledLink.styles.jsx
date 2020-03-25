@@ -13,6 +13,5 @@ const getLinkColor = ({ isactive }) => isactive === 'true' ? activeCSS : inactiv
 
 export default styled(Link)`
 	text-decoration: none;
-	flex-grow: 1;
 	${getLinkColor}
 `;

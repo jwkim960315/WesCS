@@ -26,8 +26,13 @@ div.nav-bar-right {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
+	align-items: center;
 
 	div {
 		margin-left: 7%;
 	}
+}
+
+div.nav-bar-blank-space {
+	width: 80px;
 }

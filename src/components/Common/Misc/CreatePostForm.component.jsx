@@ -24,7 +24,7 @@ const CreatePostForm = () => {
 						id="anonymous-checkbox" 
 						type="checkbox" 
 						value={isAnonymous ? "yes" : "no"}
-						name="Yes" 
+						name="Yes"
 						checked={isAnonymous}
 						onClick={onIsAnonymousChange}
 					/>

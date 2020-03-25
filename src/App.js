@@ -1,53 +1,82 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import NavBar from './components/Common/NavBar/NavBar.component';
+// import NavBar from './components/Common/NavBar/NavBar.component';
+
 import Home from './pages/Home/Home.page';
 import Explore from './pages/Explore/Explore.page';
 import SpecificPosts from './pages/SpecificPosts/SpecificPosts.page';
 import Alumni from './pages/Alumni/Alumni.page';
-
 import Footer from './components/Common/Footer/Footer.component';
+import Loading from './components/Common/Loading/Loading.component';
 
 
-// import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { auth, loginOrCreateUser } from './firebase/firebase.utils';
 
 import CurrentUserContext from './contexts/CurrentUser.context';
 import CategoryContext from './contexts/Category.context';
 
 import './App.scss';
 
-const App = () => {
-	let [user,setUser] = useState(null);
-	let category = useContext(CategoryContext);
+const NavBar = lazy(() => import('./components/Common/NavBar/NavBar.component'));
 
-	// useEffect(() => {
-	// 	return auth.onAuthStateChanged(async loggedInUser => {
-	// 		let userRef = await createUserProfileDocument(loggedInUser);
-	// 		// userRef.onSnapshot(snapShot => {
-	// 		// 	setUser({
-	// 		// 		id: snapShot.id,
-	// 		// 		...snapShot.data()
-	// 		// 	});
-	// 		// });
-	// 	});
-	// },[user]);
+class App extends React.Component {
+
+	state = {
+		currentUser: null,
+		isLoading: false,
+		category: null,
+	};
 	
-	return (
-		<>
-			<CurrentUserContext.Provider value={user}>
-				<NavBar />
-			</CurrentUserContext.Provider>
-			<CategoryContext.Provider value={category}></CategoryContext.Provider>
-			<Switch>
-				<Route exact path="/" component={Home} />
-				<Route exact path="/explore" component={Explore} />
-				<Route exact path="/explore/alumni" component={Alumni} />
-				<Route match="/explore" component={SpecificPosts} />
-			</Switch>
-			<Footer />
-		</>
-	)
+	unsubscribeFromAuth = null;
+
+	componentWillMount() {
+		this.setState({ isLoading: true });
+		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+			if (userAuth) {
+				const userRef = await loginOrCreateUser(userAuth);	
+
+				userRef.onSnapshot(snapshot => {
+					this.setState({
+						currentUser: {
+							id: snapshot.id,
+							...snapshot.data()
+						}
+					}, () => this.setState({ isLoading: false }));
+				})
+			} else {
+				this.setState({ currentUser: userAuth }, () => this.setState({ isLoading: false }))
+			}
+		});
+	}
+
+	componentWillUnmount() {
+		this.unsubscribeFromAuth();
+	}
+
+	render() {
+		const { currentUser, isLoading } = this.state;
+		return !isLoading ? (
+			<>
+				<Suspense fallback={<Loading />}>
+					<CurrentUserContext.Provider value={currentUser}>
+						<NavBar />
+					</CurrentUserContext.Provider>
+				</Suspense>
+				<CategoryContext.Provider value={this.state.category}></CategoryContext.Provider>
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route exact path="/explore" component={Explore} />
+					<Route exact path="/explore/alumni" component={Alumni} />
+					<Route match="/explore" component={SpecificPosts} />
+				</Switch>
+				<Footer />
+			</>
+		) : (
+			<Loading />
+		)
+	}
+	
 };
 
 export default App;
