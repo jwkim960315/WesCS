@@ -1,17 +1,21 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import SearchBar from '../Misc/SearchBar.component';
+// Components
+import NavBarContainer from './NavBarContainer.styles';
+import SearchBar from '../SearchBar/SearchBar.component';
+import NavBarBlankSpace from './NavBarBlankSpace.styles';
+import NavBarRight from './NavBarRight.styles';
 import StyledLink from './StyledLink.styles';
 import UserProfile from '../UserProfile/UserProfile.component';
 
+// Firebase
 import firebase, { signInWithGoogle, auth } from '../../../firebase/firebase.utils';
 
+// Contexts
 import UserContext from '../../../contexts/CurrentUser.context';
 
-
-import './NavBar.scss'
-
+// Helper Function
 const urlHasWord = (pathname,word) => {
 	const splitUrl = pathname.split('/');
 	return splitUrl.some(name => name === word);
@@ -19,7 +23,7 @@ const urlHasWord = (pathname,word) => {
 
 const GoogleAuthButton = ({ pathname }) => (
 	<div className="nav-bar-right-link">
-		<StyledLink to={`${pathname}`} onClick={() => signInWithGoogle()}>SIGN UP/IN WITH GOOGLE</StyledLink>
+		<StyledLink to={`${pathname}`} onClick={() => signInWithGoogle()}>SIGN IN WITH GOOGLE</StyledLink>
 	</div>
 );
 
@@ -31,22 +35,24 @@ const NavBar = () => {
 	const currentUser = useContext(UserContext);
 
 	return (
-		<div className="nav-bar">
+		<NavBarContainer>
 			<StyledLink to="/">LOGO</StyledLink>
-			<div className="nav-bar-blank-space"></div>
+			<NavBarBlankSpace />
 			<SearchBar />
-			<div className="nav-bar-blank-space"></div>
-			<div className='nav-bar-right'>
+			<NavBarBlankSpace />
+			<NavBarRight>
 				<div className="nav-bar-right-link">
 					<StyledLink to="/" isactive={`${pathname === '/'}`}>HOME</StyledLink>
 				</div>
 				<div className="nav-bar-right-link">
 					<StyledLink to="/explore" isactive={`${urlHasWord(pathname,'explore')}`}>EXPLORE</StyledLink>
 				</div>
-				{ currentUser ? <UserProfile user={currentUser} /> : <GoogleAuthButton pathname={pathname} /> }
-				{ currentUser ? <StyledLink to={`${pathname}`} onClick={() => auth.signOut()}>SIGN OUT</StyledLink> : null }
-			</div>
-		</div>
+				<div>
+					{ currentUser ? <UserProfile user={currentUser} /> : <GoogleAuthButton pathname={pathname} /> }
+				</div>
+				{ currentUser ? <div><StyledLink to={`${pathname}`} onClick={() => auth.signOut()}>SIGN OUT</StyledLink></div> : null }
+			</NavBarRight>
+		</NavBarContainer>
 	)
 };
 

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import BodyContainer from '../../components/Common/Misc/BodyContainer.component';
-import LeftTitle from '../../components/Common/Misc/LeftTitle.component';
-import MemberCardsContainer from '../../components/Common/Misc/MemberCardsContainer.component';
-import MemberCard from '../../components/Common/Misc/MemberCard.component';
+import BodyContainer from '../../components/Common/BodyContainer/BodyContainer.component';
+import LeftTitle from '../../components/Common/LeftTitle/LeftTitle.component';
+import MemberCardsContainer from '../../components/Common/MemberCards/MemberCardsContainer.component';
+import MemberCard from '../../components/Common/MemberCards/MemberCard.component';
 
 import { alumni } from '../../data/data.utils';
 

@@ -2,9 +2,9 @@ import React, { useEffect, useContext, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // Components
-import BodyContainer from '../../components/Common/Misc/BodyContainer.component';
-import LeftTitle from '../../components/Common/Misc/LeftTitle.component';
-import CreatePostForm from '../../components/Common/Misc/CreatePostForm.component';
+import BodyContainer from '../../components/Common/BodyContainer/BodyContainer.component';
+import LeftTitle from '../../components/Common/LeftTitle/LeftTitle.component';
+import CreatePostForm from '../../components/Common/CreatePostForm/CreatePostForm.component';
 
 const pathnameToTitle = pathname => {
 	const splitPathname = pathname.split('/');

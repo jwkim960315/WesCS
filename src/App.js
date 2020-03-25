@@ -30,7 +30,7 @@ class App extends React.Component {
 	
 	unsubscribeFromAuth = null;
 
-	componentWillMount() {
+	componentDidMount() {
 		this.setState({ isLoading: true });
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
 			if (userAuth) {

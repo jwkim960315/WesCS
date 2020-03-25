@@ -4,15 +4,13 @@ import SearchBarContainer from './SearchBarContainer.styles';
 import SearchBarButton from './SearchBarButton.styles';
 import SearchBarInput from './SearchBarInput.styles';
 
-import './SearchBar.scss';
-
 const SearchBar = () => (
-	<SearchBarContainer>
-		<div className="search-bar">
+	<form>
+		<SearchBarContainer>
 			<SearchBarInput placeholder="keyword..." />
 			<SearchBarButton>Search</SearchBarButton>
-		</div>
-	</SearchBarContainer>
+		</SearchBarContainer>
+	</form>
 );
 
 export default SearchBar;

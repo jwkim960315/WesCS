@@ -1,14 +1,14 @@
 import React from 'react';
 
 // Components
-import BodyContainer from '../../components/Common/Misc/BodyContainer.component';
+import BodyContainer from '../../components/Common/BodyContainer/BodyContainer.component';
 import LeftCard from '../../components/Home/LeftCard.component';
-import SearchBar from '../../components/Common/Misc/SearchBar.component';
+import SearchBar from '../../components/Common/SearchBar/SearchBar.component';
 import RightColumn from '../../components/Home/RightColumn.component';
 import PicDescripCard from '../../components/Home/PicDescriptCard.component';
 import CenterTitle from '../../components/Home/CenterTitle.component';
-import MemberCardsContainer from '../../components/Common/Misc/MemberCardsContainer.component';
-import MemberCard from '../../components/Common/Misc/MemberCard.component';
+import MemberCardsContainer from '../../components/Common/MemberCards/MemberCardsContainer.component';
+import MemberCard from '../../components/Common/MemberCards/MemberCard.component';
 
 // SVGs
 import { ReactComponent as Monitor } from '../../assets/images/Monitor.svg';

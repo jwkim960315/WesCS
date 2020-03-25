@@ -9,10 +9,11 @@ export default styled.input`
 	border-radius: 4px 0 0 4px;
 	background: none;
 	color: white;
-
+	font-size: 14px;
+	
 	&:focus {
 		outline: none;
-
+		
 		::placeholder {
 			color: lightgrey;
 		}
