@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 
 // Components
@@ -8,9 +8,13 @@ import NavBarBlankSpace from './NavBarBlankSpace.styles';
 import NavBarRight from './NavBarRight.styles';
 import StyledLink from './StyledLink.styles';
 import UserProfile from '../UserProfile/UserProfile.component';
+import NavBarRightOne from './NavBarRightOne.styles';
+import NavBarRightTwo from './NavBarRightTwo.styles';
+import SignOutContainer from './SignOutContainer.styles';
+
 
 // Firebase
-import firebase, { signInWithGoogle, auth } from '../../../firebase/firebase.utils';
+import { signInWithGoogle, auth } from '../../../firebase/firebase.utils';
 
 // Contexts
 import UserContext from '../../../contexts/CurrentUser.context';
@@ -34,23 +38,33 @@ const NavBar = () => {
 
 	const currentUser = useContext(UserContext);
 
+	/* 
+		No SCSS 
+			- NavBarRightTwo
+			- SignOutContainer
+	*/
+
 	return (
 		<NavBarContainer>
 			<StyledLink to="/">LOGO</StyledLink>
-			<NavBarBlankSpace />
+			<NavBarBlankSpace isLeft={'true'} />
 			<SearchBar />
-			<NavBarBlankSpace />
+			<NavBarBlankSpace isLeft={'false'} />
 			<NavBarRight>
-				<div className="nav-bar-right-link">
-					<StyledLink to="/" isactive={`${pathname === '/'}`}>HOME</StyledLink>
-				</div>
-				<div className="nav-bar-right-link">
-					<StyledLink to="/explore" isactive={`${urlHasWord(pathname,'explore')}`}>EXPLORE</StyledLink>
-				</div>
-				<div>
-					{ currentUser ? <UserProfile user={currentUser} /> : <GoogleAuthButton pathname={pathname} /> }
-				</div>
-				{ currentUser ? <div><StyledLink to={`${pathname}`} onClick={() => auth.signOut()}>SIGN OUT</StyledLink></div> : null }
+				<NavBarRightOne>
+					<div>
+						<StyledLink to="/" isactive={`${pathname === '/'}`}>HOME</StyledLink>
+					</div>
+					<div>
+						<StyledLink to="/explore" isactive={`${urlHasWord(pathname,'explore')}`}>EXPLORE</StyledLink>
+					</div>
+					<div>
+						{ currentUser ? <UserProfile user={currentUser} /> : <GoogleAuthButton pathname={pathname} /> }
+					</div>	
+				</NavBarRightOne>
+				<NavBarRightTwo>
+					{ currentUser ? <SignOutContainer><StyledLink to={`${pathname}`} onClick={() => auth.signOut()}>SIGN OUT</StyledLink></SignOutContainer> : null }
+				</NavBarRightTwo>
 			</NavBarRight>
 		</NavBarContainer>
 	)

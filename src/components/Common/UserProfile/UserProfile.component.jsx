@@ -11,12 +11,12 @@ const UserProfile = ({ user: { photoURL, displayName } }) => {
     const { pathname } = useLocation();
 
     return (
-        <StyledLink to="/profile" isactive={`${pathname === '/profile'}`}>
-            <UserProfileContainer>
-                    <UserProfilePicture src={photoURL} alt="user-profile-picture" />
-                    <UserProfileName>{displayName}</UserProfileName>
-            </UserProfileContainer>
-        </StyledLink>
+        <UserProfileContainer>
+            <StyledLink to="/profile" isactive={`${pathname === '/profile'}`}>
+                <UserProfilePicture src={photoURL} alt="user-profile-picture" />
+                <UserProfileName>{displayName.toUpperCase()}</UserProfileName>
+            </StyledLink>
+        </UserProfileContainer>
     )
 };
 

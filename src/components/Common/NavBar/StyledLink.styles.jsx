@@ -13,5 +13,9 @@ const getLinkColor = ({ isactive }) => isactive === 'true' ? activeCSS : inactiv
 
 export default styled(Link)`
 	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
 	${getLinkColor}
 `;

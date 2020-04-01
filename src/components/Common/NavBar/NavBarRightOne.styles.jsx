@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export default styled.div`
-    flex-grow: 2;
-    padding-left: 260px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
+    a {
+        margin-right: 20px;
+    }
 `;
