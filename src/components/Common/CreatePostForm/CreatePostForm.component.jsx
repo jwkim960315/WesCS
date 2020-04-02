@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 
 import CreatePostFormContainer from './CreatePostFormContainer.component';
 import CreatePostFormInput from './CreatePostFormInput.component';
+import CreatePostFormTextarea from './CreatePostFormTextarea.styles';
 import CreatePostFormBottom from './CreatePostFormBottom.component';
 import CreatePostFormButton from './CreatePostFormButton.component';
+import CreatePostFormCheckbox from './CreatePostFormCheckbox.styles';
+import CreatePostFormCheckboxContainer from './CreatePostFormCheckboxContainer.styles';
 
 const CreatePostForm = () => {
 	let [title,setTitle] = useState('');
@@ -12,24 +15,24 @@ const CreatePostForm = () => {
 
 	const onTitleChange = e => setTitle(e.target.value);
 	const onContentChange = e => setContent(e.target.value);
-	const onIsAnonymousChange = e => setIsAnonymous(e.target.value === "yes" ? false : true);
+	const onIsAnonymousChange = e => {
+		e.preventDefault();
+		setIsAnonymous(!isAnonymous);
+	}
 
 	return (
 		<CreatePostFormContainer>
 			<CreatePostFormInput onChange={onTitleChange} placeholder="Title" />
-			<CreatePostFormInput onChange={onContentChange} placeholder="Please be appropriate..." />
+			<CreatePostFormTextarea onChange={onContentChange} placeholder="Please be appropriate..."></CreatePostFormTextarea>
 			<CreatePostFormBottom>
-				<div>
-					<input 
-						id="anonymous-checkbox" 
-						type="checkbox" 
+				<CreatePostFormCheckboxContainer onClick={onIsAnonymousChange}>
+					<CreatePostFormCheckbox 
+						id="anonymous-checkbox"
 						value={isAnonymous ? "yes" : "no"}
 						name="Yes"
-						checked={isAnonymous}
-						onClick={onIsAnonymousChange}
-					/>
+					>{isAnonymous ? <i className="fas fa-check"></i> : null}</CreatePostFormCheckbox>
 					<label htmlFor="anonymous-checkbox">Wish to be anonymous?</label>
-				</div>
+				</CreatePostFormCheckboxContainer>
 				<CreatePostFormButton type="submit">Create Post</CreatePostFormButton>
 			</CreatePostFormBottom>
 		</CreatePostFormContainer>

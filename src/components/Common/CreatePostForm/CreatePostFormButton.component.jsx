@@ -10,8 +10,9 @@ export default styled.button`
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	color: #FFFFFF;
+	cursor: pointer;
 
 	&:hover {
 		opacity: .8;
-	}
+    }
 `;

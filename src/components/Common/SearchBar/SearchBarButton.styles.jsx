@@ -9,6 +9,7 @@ const Button = styled.button`
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
 	color: #FFFFFF;
+	cursor: pointer;
 
 	&:hover {
 		opacity: .8;
