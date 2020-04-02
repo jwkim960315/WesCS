@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import BodyContainer from '../../components/Common/BodyContainer/BodyContainer.component';
 import LeftTitle from '../../components/Common/LeftTitle/LeftTitle.component';
 import CreatePostForm from '../../components/Common/CreatePostForm/CreatePostForm.component';
+import PostsFilter from '../../components/SpecificPosts/PostsFilter.component';
 import Posts from '../../components/SpecificPosts/Posts.component';
 
 const pathnameToTitle = pathname => {
@@ -47,6 +48,7 @@ const SpecificPosts = () => {
 		<BodyContainer>
 			<LeftTitle>{category}</LeftTitle>
 			<CreatePostForm />
+			<PostsFilter />
 			<Posts />
 		</BodyContainer>
 	)
