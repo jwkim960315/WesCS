@@ -8,6 +8,7 @@ export default styled.input`
 	border-radius: 8px;
 	border: none;
 	margin: 10px 0;
+	flex-grow: 30;
 
 	&:focus {
 		::placeholder {

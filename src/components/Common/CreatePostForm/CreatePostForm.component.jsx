@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 
 import CreatePostFormContainer from './CreatePostFormContainer.component';
+import CreatePostFormTop from './CreatePostFormTop.styles';
 import CreatePostFormInput from './CreatePostFormInput.component';
+import CreatePostFormTopBlankSpace from './CreatePostFormTopBlankSpace.styles';
 import CreatePostFormTextarea from './CreatePostFormTextarea.styles';
 import CreatePostFormBottom from './CreatePostFormBottom.component';
 import CreatePostFormButton from './CreatePostFormButton.component';
 import CreatePostFormCheckbox from './CreatePostFormCheckbox.styles';
 import CreatePostFormCheckboxContainer from './CreatePostFormCheckboxContainer.styles';
+import CreatePostFormDropdown from './CreatePostFormDropdown.component';
 
 const CreatePostForm = () => {
 	let [title,setTitle] = useState('');
@@ -22,7 +25,11 @@ const CreatePostForm = () => {
 
 	return (
 		<CreatePostFormContainer>
-			<CreatePostFormInput onChange={onTitleChange} placeholder="Title" />
+			<CreatePostFormTop>
+				<CreatePostFormInput onChange={onTitleChange} placeholder="Title" />
+				<CreatePostFormTopBlankSpace />
+				<CreatePostFormDropdown />
+			</CreatePostFormTop>
 			<CreatePostFormTextarea onChange={onContentChange} placeholder="Please be appropriate..."></CreatePostFormTextarea>
 			<CreatePostFormBottom>
 				<CreatePostFormCheckboxContainer onClick={onIsAnonymousChange}>

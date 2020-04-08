@@ -6,8 +6,8 @@ export default styled.div`
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 100px;
     background: #F0F0F0;
+    margin: 100px 0 20px 0;
 
     & div {
         position: relative;
@@ -16,6 +16,7 @@ export default styled.div`
         justify-content: center;
         align-items: center;
         padding-left: 10px;
+        margin-right: 10px;
         border-radius: 8px;
     }
 

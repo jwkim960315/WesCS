@@ -63,10 +63,9 @@ const getWidthCSS = ({ defaultValue }) => {
 }
 
 export default styled.select`
-    ${getWidthCSS}
-    padding-left: 20px;
+    flex-grow: 1;
     z-index: 3;
-    display: inline-block;
+    padding-right: 10px;
     height: 5vh;
     background: none;
     border: none;

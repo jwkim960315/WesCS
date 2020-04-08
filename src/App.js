@@ -63,13 +63,14 @@ class App extends React.Component {
 						<NavBar />
 					</CurrentUserContext.Provider>
 				</Suspense>
-				<CategoryContext.Provider value={this.state.category}></CategoryContext.Provider>
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route exact path="/explore" component={Explore} />
-					<Route exact path="/explore/alumni" component={Alumni} />
-					<Route match="/explore" component={SpecificPosts} />
-				</Switch>
+				<CurrentUserContext.Provider value={currentUser}>
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/explore" component={Explore} />
+						<Route exact path="/explore/alumni" component={Alumni} />
+						<Route match="/explore" component={SpecificPosts} />
+					</Switch>
+				</CurrentUserContext.Provider>
 				<Footer />
 			</>
 		) : (
