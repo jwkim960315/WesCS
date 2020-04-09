@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import WhiteCard from '../WhiteCard/WhiteCard.component';
 import PostHeaderContainer from './PostHeaderContainer.styles';
@@ -13,15 +13,16 @@ import PostContent from './PostContent.styles';
 
 import UserContext from '../../../contexts/CurrentUser.context';
 
-const Post = ({ post: { title, category, lastEdited, author, content } }) => {
+const Post = ({ post: { title, category, lastEdited, author, content, id }, onPostClick }) => {
+    const history = useHistory();
+    const location = useLocation();
+
     const currentUser = useContext(UserContext);
-    
-    console.log(author);
-    console.log(currentUser);
 
     
     return (
-        <WhiteCard>
+        
+        <WhiteCard onPostClick={onPostClick} postId={id}>
             <PostHeaderContainer>
                 <PostHeaderLeft>
                     <PostHeaderTitle>{title}</PostHeaderTitle>

@@ -7,6 +7,7 @@ import Home from './pages/Home/Home.page';
 import Explore from './pages/Explore/Explore.page';
 import SpecificPosts from './pages/SpecificPosts/SpecificPosts.page';
 import Alumni from './pages/Alumni/Alumni.page';
+import ChosenPost from './pages/ChosenPost/ChosenPost.page';
 import Footer from './components/Common/Footer/Footer.component';
 import Loading from './components/Common/Loading/Loading.component';
 
@@ -68,6 +69,8 @@ class App extends React.Component {
 						<Route exact path="/" component={Home} />
 						<Route exact path="/explore" component={Explore} />
 						<Route exact path="/explore/alumni" component={Alumni} />
+						<Route exact path="/post" component={ChosenPost} />
+						
 						<Route match="/explore" component={SpecificPosts} />
 					</Switch>
 				</CurrentUserContext.Provider>

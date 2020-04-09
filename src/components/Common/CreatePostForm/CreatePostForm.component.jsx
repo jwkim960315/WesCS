@@ -14,6 +14,7 @@ import CreatePostFormDropdown from './CreatePostFormDropdown.component';
 const CreatePostForm = () => {
 	let [title,setTitle] = useState('');
 	let [content,setContent] = useState('');
+	let [category,setCategory] = useState('jobsInterviews');
 	let [isAnonymous,setIsAnonymous] = useState(true);
 
 	const onTitleChange = e => setTitle(e.target.value);
@@ -22,25 +23,34 @@ const CreatePostForm = () => {
 		e.preventDefault();
 		setIsAnonymous(!isAnonymous);
 	}
+	const onCategoryChange = e => setCategory(e.target.value);
+	const onSubmitHandle = e => {
+		console.log(e);
+		e.preventDefault();
+		console.log(title);
+		console.log(category);
+		console.log(content);
+		console.log(isAnonymous);
+	}
 
 	return (
-		<CreatePostFormContainer>
+		<CreatePostFormContainer onSubmit={onSubmitHandle}>
 			<CreatePostFormTop>
-				<CreatePostFormInput onChange={onTitleChange} placeholder="Title" />
+				<CreatePostFormInput onChange={onTitleChange} placeholder="Title" value={title} />
 				<CreatePostFormTopBlankSpace />
-				<CreatePostFormDropdown />
+				<CreatePostFormDropdown value={category} onCategoryChange={onCategoryChange} />
 			</CreatePostFormTop>
-			<CreatePostFormTextarea onChange={onContentChange} placeholder="Please be appropriate..."></CreatePostFormTextarea>
+			<CreatePostFormTextarea onChange={onContentChange} placeholder="Please be appropriate..." value={content}></CreatePostFormTextarea>
 			<CreatePostFormBottom>
 				<CreatePostFormCheckboxContainer onClick={onIsAnonymousChange}>
-					<CreatePostFormCheckbox 
+					<CreatePostFormCheckbox
 						id="anonymous-checkbox"
 						value={isAnonymous ? "yes" : "no"}
 						name="Yes"
 					>{isAnonymous ? <i className="fas fa-check"></i> : null}</CreatePostFormCheckbox>
 					<label htmlFor="anonymous-checkbox">Wish to be anonymous?</label>
 				</CreatePostFormCheckboxContainer>
-				<CreatePostFormButton type="submit">Create Post</CreatePostFormButton>
+				<CreatePostFormButton type="submit" value="Create Post" />
 			</CreatePostFormBottom>
 		</CreatePostFormContainer>
 	)

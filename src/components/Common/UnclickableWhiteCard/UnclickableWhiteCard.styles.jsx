@@ -7,9 +7,4 @@ export default styled.div`
     padding: 12px 20px 0 20px;
     color: #364F6B;
     margin-bottom: 64px;
-    cursor: pointer;
-
-    &:hover {
-        opacity: .7;
-    }
 `;
