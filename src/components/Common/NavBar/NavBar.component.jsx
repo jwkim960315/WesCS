@@ -22,7 +22,7 @@ import UserContext from '../../../contexts/CurrentUser.context';
 // Helper Function
 const urlHasWord = (pathname,word) => {
 	const splitUrl = pathname.split('/');
-	return splitUrl.some(name => name === word);
+	return splitUrl.some(name => name === word || name === 'post');
 }
 
 const GoogleAuthButton = ({ pathname }) => (

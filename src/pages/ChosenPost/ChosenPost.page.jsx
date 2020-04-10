@@ -13,8 +13,9 @@ import PostHeaderCategoryLabel from '../../components/Common/Post/PostHeaderCate
 import PostHeaderEditButton from '../../components/Common/Post/PostHeaderEditButton.styles';
 import PostHeaderDeleteButton from '../../components/Common/Post/PostHeaderDeleteButton.styles';
 import PostHeaderButtons from '../../components/Common/Post/PostHeaderButtons.styles';
-import PostContent from '../../components/Common/Post/PostContent.styles';
+import ChosenPostContent from '../../components/Common/ChosenPost/ChosenPostContent.styles';
 import BodyContainer from '../../components/Common/BodyContainer/BodyContainer.component';
+import PostComment from '../../components/Common/PostComment/PostComment.component';
 
 const ChosenPost = () => {
     const { state: { postId } } = useLocation();
@@ -42,9 +43,11 @@ const ChosenPost = () => {
                         }
                 </PostHeaderContainer>
                 <div>{lastEdited}</div>
-                <PostContent>
+                <ChosenPostContent>
                     {content}
-                </PostContent>
+                </ChosenPostContent>
+
+                <PostComment />
             </UnclickableWhiteCard>
         </BodyContainer>
     )

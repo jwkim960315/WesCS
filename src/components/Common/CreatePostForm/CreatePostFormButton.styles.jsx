@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export default styled.input`
-	width: 130px;
 	height: 40px;
 	background: #FC5C9C;
 	border: 1px solid #FC5C9C;

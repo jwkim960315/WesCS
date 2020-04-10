@@ -266,3 +266,36 @@ export const posts = [
         category: 'Jobs & Interviews'
     },
 ];
+
+export const comments = [
+	{
+		content: "Please DM me.",
+		createdAt: "Mar 08 2020 13:32:03",
+		replies: [],
+		author: {
+			id: "beagerafewafas",
+			name: "John Doe",
+			photoURL: ""
+		}
+	},
+	{
+		content: "",
+		createdAt: "",
+		replies: [
+			{
+				content: "",
+				createdAt: "",
+				author: {
+					id: "",
+					name: "",
+					photoURL: ""
+				}
+			}
+		],
+		author: {
+			id: "",
+			name: "",
+			photoURL: ""
+		}
+	}
+]

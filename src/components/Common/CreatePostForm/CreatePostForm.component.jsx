@@ -6,7 +6,7 @@ import CreatePostFormInput from './CreatePostFormInput.component';
 import CreatePostFormTopBlankSpace from './CreatePostFormTopBlankSpace.styles';
 import CreatePostFormTextarea from './CreatePostFormTextarea.styles';
 import CreatePostFormBottom from './CreatePostFormBottom.component';
-import CreatePostFormButton from './CreatePostFormButton.component';
+import CreatePostFormButton from './CreatePostFormButton.styles';
 import CreatePostFormCheckbox from './CreatePostFormCheckbox.styles';
 import CreatePostFormCheckboxContainer from './CreatePostFormCheckboxContainer.styles';
 import CreatePostFormDropdown from './CreatePostFormDropdown.component';
