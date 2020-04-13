@@ -26,7 +26,7 @@ const Post = ({ post: { title, category, lastEdited, author, content, id }, onPo
             <PostHeaderContainer>
                 <PostHeaderLeft>
                     <PostHeaderTitle>{title}</PostHeaderTitle>
-                    <PostHeaderCategoryLabel>{category}</PostHeaderCategoryLabel>
+                    <PostHeaderCategoryLabel category={category}>{category}</PostHeaderCategoryLabel>
                 </PostHeaderLeft>
                     
                     {
