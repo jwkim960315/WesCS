@@ -16,7 +16,7 @@ import PostHeaderButtons from '../../components/Common/Post/PostHeaderButtons.st
 import ChosenPostContent from '../../components/Common/ChosenPost/ChosenPostContent.styles';
 import BodyContainer from '../../components/Common/BodyContainer/BodyContainer.component';
 import PostComment from '../../components/Common/PostComment/PostComment.component';
-// import Comments from '../../components/Common/Comments/Comments.component';
+import Comments from '../../components/Common/Comments/Comments.component';
 
 const ChosenPost = () => {
     const { state: { postId } } = useLocation();
@@ -50,7 +50,7 @@ const ChosenPost = () => {
 
                 <PostComment />
 
-                
+                <Comments />
             </UnclickableWhiteCard>
         </BodyContainer>
     )
